@@ -1,38 +1,61 @@
-# Reservation System Frontend
+# Sistema de Reservas y Gestión de Servicios - Frontend
 
-## Objetivo
+Este es el proyecto frontend de un sistema de reservas y gestión de servicios, desarrollado en React. El sistema cuenta con un dashboard tanto para administradores como para clientes. Los administradores tienen la capacidad de gestionar reservas y servicios, mientras que los clientes pueden hacer reservas y ver los servicios disponibles.
 
-Crear una aplicación de reservas adecuada para restaurantes u hoteles. La aplicación permite a los usuarios realizar, modificar, cancelar y ver reservas de manera eficiente.
+## Tecnologías utilizadas
 
-## Arquitectura de la Aplicación
+- **React**: ^18.3.1
+- **Axios**: ^1.7.7
+- **Material UI**: @mui/material para los estilos y componentes UI
 
-### Backend (Node.js + Express.js + MongoDB)
+## Características
 
-- **API REST**: Proporciona operaciones CRUD (crear, leer, actualizar y eliminar) para las reservas.
-- **Base de Datos**: MongoDB se utiliza para el almacenamiento de datos debido a su flexibilidad y manejo de relaciones complejas.
+### 1. **Dashboard de Administrador:**
+   - **Gestión de reservas**: El administrador puede:
+     - Crear reservas a nombre de los clientes.
+     - Editar las reservas existentes.
+     - Cancelar las reservas.
+     - Visualizar todas las reservas.
+   - **Gestión de servicios**: El administrador puede:
+     - Crear nuevos servicios.
+     - Editar servicios existentes.
+     - Desactivar servicios.
+     - Listar todos los servicios.
 
-### Frontend (Vue.js)
+### 2. **Dashboard de Cliente:**
+   - **Gestión de servicios**: El cliente puede:
+     - Ver los servicios activos disponibles.
+     - Hacer reservas de los servicios.
+   - **Gestión de reservas**: El cliente puede:
+     - Visualizar sus reservas.
+     - Cancelar sus reservas.
 
-- **Interfaz de Usuario**: Proporciona una interfaz amigable para interactuar con la API del backend.
-- **Consumo de API**: Se comunica con el backend para mostrar los datos y realizar operaciones sobre las reservas.
-
-### Base de Datos (MongoDB)
-
-- **Colecciones**:
-  - **Reservas**: Información sobre las reservas realizadas.
-  - **Clientes**: Información de los clientes que realizan reservas.
-  - **Servicios**: Información sobre los servicios ofrecidos.
-
-## Diagrama de Arquitectura
-
-- **Frontend (Vue.js)** interactúa con el **Backend (Node.js)** a través de una **API REST**.
-- El **Backend (Node.js)** maneja la lógica de negocio y gestiona las peticiones del frontend.
-- **MongoDB** almacena los datos de reservas, clientes y servicios.
+### 3. **Autenticación**:
+   - El sistema incluye funcionalidad de login y registro para gestionar el acceso de los usuarios.
 
 ## Instalación
 
-1. **Clona el Repositorio**
+1. Clona este repositorio:
+   `git clone https://github.com/ElkinNocuaDev/reservation_frontend.git`
 
-   ```bash
-   git clone https://github.com/ElkinNocuaDev/reservation_frontend.git
-   cd reservation_frontend
+2. Instala las dependencias necesarias:
+    `npm install`
+
+3. Crear las variables de entorno de la base de la API para las consultas axios, se debe crear un archivo **.env** en la base del codigo con el siguiente nombre:
+
+    `VITE_BASE_API=http://localhost:3000 #ejemplo url de la base api`
+
+4. Ejecuta el proyecto:
+    `npm run dev`
+
+## Uso
+
+  - Login y Registro: Los usuarios deben registrarse y autenticarse para acceder al sistema. Dependiendo del rol del usuario (administrador o cliente), se les redirigirá al dashboard correspondiente.
+  - Dashboard de Administrador: Los administradores pueden gestionar tanto los servicios como las reservas.
+  - Dashboard de Cliente: Los clientes pueden ver los servicios disponibles y gestionar sus reservas.
+
+## Dependencias principales
+
+  - React: ^18.3.1
+  - Axios: ^1.7.7
+  - @mui/material: Librería para componentes y estilos de Material UI.
